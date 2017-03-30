@@ -1,5 +1,5 @@
-﻿using KursPodstawowyRemastered.Helpers;
-using KursPodstawowyRemastered.Klasy;
+﻿//using KursPodstawowyRemastered.Helpers;
+//using KursPodstawowyRemastered.Klasy;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,11 +31,24 @@ namespace KursPodstawowyRemastered
 
         #endregion
 
-        
+
 
         #endregion
 
-        
+       
+        // Konstruktor klasy
+        public MainWindow()
+        {
+            InitializeComponent();
 
+           
+        }
+        
+        //Metoda
+        public void PierwszaMetoda()
+        {
+            var naszPierwszyVar = 1;
+        }
+   
     }
 }
