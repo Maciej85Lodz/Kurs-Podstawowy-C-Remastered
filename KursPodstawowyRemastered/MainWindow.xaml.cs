@@ -13,8 +13,6 @@ namespace KursPodstawowyRemastered
     /// </summary>
     public partial class MainWindow : Window
     {
- 
-
         #region Zmienne i ich typy
 
         #region Popularne typy zmiennych
@@ -52,10 +50,6 @@ namespace KursPodstawowyRemastered
         const string naszeA = "aaaa";
         #endregion
 
-        
-
-        int liczbaPolubien = 10; // Testowa zmienna
-        float r = 10f; // zmienaa pomocnicza
         #region Zasieg Zmiennych
 
         public int zmiennaPubliczna = 1;
@@ -63,15 +57,20 @@ namespace KursPodstawowyRemastered
         private int zmiennaPrywatna = 1;
 
         #endregion
-        // Konstruktor klasy
+
+        int liczbaPolubien = 10; // Testowa zmienna
+        float r = 10f; // zmienaa pomocnicza
+        #region Konstruktory Klasy
+        // Bazowy Konstruktor klasy
         public MainWindow()
         {
             InitializeComponent();
 
-           
+
         }
+        #endregion
 
-
+        #region Metody Pomocnicze
         public void Operatory()
         {
             #region Zmienne pomocnicze
@@ -122,14 +121,28 @@ namespace KursPodstawowyRemastered
         public void PierwszaMetoda()
         {
             var wynik = PI * r * r;
-            DrugaMetoda(naszeA);
+            DrugaMetoda("aaaa");
+
+            if (wynik > 30)
+            {
+                int klamrowaPulapka = 1;
+            }
+            //var wynik2 = PI + klamrowaPulapka; // BAD!!!
+
 
             var naszPierwszyVar = liczbaPolubien; // magicznyvar -1
         }
+        /// <summary>
+        /// This is the Test method which received always 'aaaa'
+        /// </summary>
+        /// <param name="a"> Super parameter 'aaaa'</param>
 
         public void DrugaMetoda(string a)
         {
             var naszDrugiVar = liczbaPolubien; // magiczny var -2
         }
+        #endregion
+
+
     }
 }
