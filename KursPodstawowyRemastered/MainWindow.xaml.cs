@@ -44,17 +44,21 @@ namespace KursPodstawowyRemastered
            
         }
 
-        int liczbaPolubien = 10;
+        int liczbaPolubien = 10; // Testowa zmienna
+        const float PI = 3.14f;
+        const string naszeA = "aaaa";
+        float r = 10f;
         //Metoda
         public void PierwszaMetoda()
         {
-           
+            var wynik = PI * r * r;
+            DrugaMetoda(naszeA);
 
-            var naszPierwszyVar = liczbaPolubien;
+            var naszPierwszyVar = liczbaPolubien; // magicznyvar -1
         }
-        public void DrugaMetoda()
+        public void DrugaMetoda(string a)
         {
-            var naszDrugiVar = liczbaPolubien;
+            var naszDrugiVar = liczbaPolubien; // magiczny var -2
         }
     }
 }
