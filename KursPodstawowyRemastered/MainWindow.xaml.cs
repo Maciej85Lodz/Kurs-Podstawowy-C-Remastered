@@ -43,12 +43,18 @@ namespace KursPodstawowyRemastered
 
            
         }
-        
+
+        int liczbaPolubien = 10;
         //Metoda
         public void PierwszaMetoda()
         {
-            var naszPierwszyVar = 1;
+           
+
+            var naszPierwszyVar = liczbaPolubien;
         }
-   
+        public void DrugaMetoda()
+        {
+            var naszDrugiVar = liczbaPolubien;
+        }
     }
 }
