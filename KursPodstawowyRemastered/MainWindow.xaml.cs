@@ -47,7 +47,22 @@ namespace KursPodstawowyRemastered
 
         #endregion
 
+        #region Stale
+        const float PI = 3.14f;
+        const string naszeA = "aaaa";
+        #endregion
 
+        
+
+        int liczbaPolubien = 10; // Testowa zmienna
+        float r = 10f; // zmienaa pomocnicza
+        #region Zasieg Zmiennych
+
+        public int zmiennaPubliczna = 1;
+        internal int zmiennaInternal = 1;
+        private int zmiennaPrywatna = 1;
+
+        #endregion
         // Konstruktor klasy
         public MainWindow()
         {
@@ -56,10 +71,6 @@ namespace KursPodstawowyRemastered
            
         }
 
-        int liczbaPolubien = 10; // Testowa zmienna
-        const float PI = 3.14f;
-        const string naszeA = "aaaa";
-        float r = 10f; // zmienaa pomocnicza
 
         public void Operatory()
         {
