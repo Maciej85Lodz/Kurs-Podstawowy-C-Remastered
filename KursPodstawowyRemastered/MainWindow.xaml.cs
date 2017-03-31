@@ -1,8 +1,5 @@
-﻿//using KursPodstawowyRemastered.Helpers;
-//using KursPodstawowyRemastered.Klasy;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Windows;
 
@@ -67,6 +64,35 @@ namespace KursPodstawowyRemastered
             InitializeComponent();
             Instrukcje();
          }
+        #endregion
+
+        #region Kolekcje
+
+        int[] naszaTablica = new int[10];
+        List<int> naszaList = new List<int>();
+        void Kolekcje()
+        {
+            naszaTablica[0] = 1;
+            naszaTablica[1] = 55;
+            naszaTablica[2] = 33;
+            naszaTablica[3] = 56;
+            naszaTablica[4] = 24;
+            naszaTablica[5] = 66;
+            naszaTablica[6] = 45;
+            naszaTablica[7] = 12;
+            naszaTablica[8] = 78;
+            naszaTablica[9] = 1;
+
+            naszaList.Add(1);
+            naszaList.Add(55);
+            naszaList.Add(33);
+            naszaList.Add(66);
+
+            listView.ItemsSource = naszaList;
+
+        }
+
+
         #endregion
         #region Instrukcje
 
@@ -196,6 +222,7 @@ namespace KursPodstawowyRemastered
         {
             var naszDrugiVar = liczbaPolubien; // magiczny var -2
         }
+
 
         #endregion
 
