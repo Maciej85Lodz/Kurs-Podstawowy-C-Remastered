@@ -65,9 +65,64 @@ namespace KursPodstawowyRemastered
         public MainWindow()
         {
             InitializeComponent();
+            Instrukcje();
+         }
+        #endregion
+        #region Instrukcje
 
+        private void Instrukcje()
+        {
+            testowyTextBlock.Text = "Start";
+            var warunek = false;
 
+            //Printer Status
+            var liczba = 150; // 0 = not working; 1= working; 2=maybe;
+
+            //testowyTextBlock.Text = (warunek) ? "3" : "0";
+            #region Instrukcja IF
+            if (liczba > 1 && liczba < 100)
+            {
+                testowyTextBlock.Text = "True 1";
+            }
+            else if (liczba > 100 && liczba < 200)
+            {
+                testowyTextBlock.Text = "true 2";
+            }
+            else
+            {
+                testowyTextBlock.Text = "False";
+            }
+            #endregion
+
+            #region Instrukcja Switch
+
+            switch (liczba)
+            {
+                case 0:
+                    testowyTextBlock.Text = "Printer is not working";
+                    break;
+                case 1:
+                    testowyTextBlock.Text = "Printer is working";
+                    break;
+                case 2:
+                    testowyTextBlock.Text = "Printer is working maybe";
+                    break;
+
+                default:
+                    testowyTextBlock.Text = "UPS!!!!";
+                    break;
+            }
+            #endregion
+
+            #region Instrukcja FOR
+
+            for (int i = 0; i < 10; i++)
+            {
+                testowyTextBlock.Text = i.ToString();   
+            }
+            #endregion
         }
+
         #endregion
 
         #region Metody Pomocnicze
@@ -141,8 +196,9 @@ namespace KursPodstawowyRemastered
         {
             var naszDrugiVar = liczbaPolubien; // magiczny var -2
         }
+
         #endregion
 
-
+       
     }
 }
