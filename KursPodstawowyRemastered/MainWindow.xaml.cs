@@ -10,6 +10,33 @@ namespace KursPodstawowyRemastered
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        enum StanyPostaci
+        {
+            Running =10,
+            Jumping = 20,
+            Swimming = 30
+        }
+
+        void Enumy()
+        {
+            StanyPostaci stany = StanyPostaci.Running;
+
+            switch (stany)
+            {
+                case StanyPostaci.Running:
+                    break;
+                case StanyPostaci.Jumping:
+                    break;
+                case StanyPostaci.Swimming:
+                    break;
+                default:
+                    break;
+            }
+
+            var valueEnum = Enum.GetValues(typeof(StanyPostaci));
+        }
+
         #region Zmienne i ich typy
 
         #region Popularne typy zmiennych
@@ -87,7 +114,9 @@ namespace KursPodstawowyRemastered
             naszaList.Add(55);
             naszaList.Add(33);
             naszaList.Add(66);
+            
 
+            //Adding source data (collections) to our ListView
             listView.ItemsSource = naszaList;
 
         }
