@@ -27,5 +27,33 @@ namespace KursPodstawowyRemastered.Classes
 
             return pierwsza + druga;
         }
+        /// <summary>
+        /// Oblicza dowolna roznica czasu pomiedzy dzis a zadana data
+        /// </summary>
+        /// <param name="dataUrodzenia">Data</param>
+        /// <returns></returns>
+        public static int ObliczRoznicaDat(DateTime dataUrodzenia)
+        {
+            return DateTime.Now.Year - dataUrodzenia.Year;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dataOd"></param>
+        /// <param name="dataUrodzenia"></param>
+        /// <returns></returns>
+        public static int ObliczRoznicaDat(DateTime dataOd, DateTime dataUrodzenia)
+        {
+            return dataOd.Year - dataUrodzenia.Year;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="rok"></param>
+        /// <returns></returns>
+        public static int ObliczRoznicaDat(int rok)
+        {
+            return DateTime.Now.Year - rok;
+        }
     }
 }

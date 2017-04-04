@@ -84,7 +84,7 @@ namespace KursPodstawowyRemastered
             var wynik = licznik.DodajDwieLiczbyCalkowite(2, 2);
 
             Czlowiek czlek = new Czlowiek("Maciej", Rasy.Biala, new DateTime(1985,09,17));
-            Czlowiek czlek2 = new Czlowiek("Natalia", Rasy.Biala, new DateTime(1985, 06, 24));
+            Czlowiek czlek2 = new Czlowiek("Natalia", Rasy.Biala, new DateTime(1985, 06, 24), "fjgvffbgerkgfryvgf","To jest Login");
 
          
 
