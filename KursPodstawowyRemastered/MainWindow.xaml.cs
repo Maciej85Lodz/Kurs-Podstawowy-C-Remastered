@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KursPodstawowyRemastered.Classes;
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Windows;
@@ -10,32 +11,6 @@ namespace KursPodstawowyRemastered
     /// </summary>
     public partial class MainWindow : Window
     {
-
-        enum StanyPostaci
-        {
-            Running =10,
-            Jumping = 20,
-            Swimming = 30
-        }
-
-        void Enumy()
-        {
-            StanyPostaci stany = StanyPostaci.Running;
-
-            switch (stany)
-            {
-                case StanyPostaci.Running:
-                    break;
-                case StanyPostaci.Jumping:
-                    break;
-                case StanyPostaci.Swimming:
-                    break;
-                default:
-                    break;
-            }
-
-            var valueEnum = Enum.GetValues(typeof(StanyPostaci));
-        }
 
         #region Zmienne i ich typy
 
@@ -69,6 +44,7 @@ namespace KursPodstawowyRemastered
 
         #endregion
 
+
         #region Stale
         const float PI = 3.14f;
         const string naszeA = "aaaa";
@@ -83,14 +59,74 @@ namespace KursPodstawowyRemastered
         #endregion
 
         int liczbaPolubien = 10; // Testowa zmienna
-        float r = 10f; // zmienaa pomocnicza
+        float r = 10f; // zmienna pomocnicza
         #region Konstruktory Klasy
         // Bazowy Konstruktor klasy
         public MainWindow()
         {
             InitializeComponent();
-            Instrukcje();
+            //Instrukcje();
+            //Kolekcje();
+            ObslugaKlas();
          }
+        #endregion
+
+        #region Classes
+        void ObslugaKlas()
+        {
+            //TestowaKlasa testowaKlasa = new TestowaKlasa();
+
+            //TestowaKlasa klasaziloscia = new TestowaKlasa(1);
+
+            Licznik licznik = new Licznik();
+
+            var wynik = licznik.DodajDwieLiczbyCalkowite(2, 2);
+
+            Czlowiek czlek = new Czlowiek();
+            czlek.DataUrodzenia = new DateTime(1985, 09, 17);
+            czlek.Imie = "Maciek";
+            czlek.Rasa = "Biała";
+
+            Czlowiek czlek2 = new Czlowiek();
+            czlek2.DataUrodzenia = new DateTime(1985, 06, 24);
+            czlek2.Imie = "Natalia";
+            czlek2.Rasa = "Biała";
+
+            List<Czlowiek> listaLudzi = new List<Czlowiek>();
+            listaLudzi.Add(czlek);
+            listaLudzi.Add(czlek2);
+
+            listView.ItemsSource = listaLudzi;
+
+        }
+        #endregion
+
+        #region Enums
+        enum StanyPostaci
+        {
+            Running = 10,
+            Jumping = 20,
+            Swimming = 30
+        }
+
+        void Enumy()
+        {
+            StanyPostaci stany = StanyPostaci.Running;
+
+            switch (stany)
+            {
+                case StanyPostaci.Running:
+                    break;
+                case StanyPostaci.Jumping:
+                    break;
+                case StanyPostaci.Swimming:
+                    break;
+                default:
+                    break;
+            }
+
+            var valueEnum = Enum.GetValues(typeof(StanyPostaci));
+        }
         #endregion
 
         #region Kolekcje
