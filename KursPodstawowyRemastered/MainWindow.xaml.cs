@@ -1,4 +1,5 @@
 ﻿using KursPodstawowyRemastered.Classes;
+using KursPodstawowyRemastered.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -82,15 +83,12 @@ namespace KursPodstawowyRemastered
 
             var wynik = licznik.DodajDwieLiczbyCalkowite(2, 2);
 
-            Czlowiek czlek = new Czlowiek();
-            czlek.DataUrodzenia = new DateTime(1985, 09, 17);
-            czlek.Imie = "Maciek";
-            czlek.Rasa = "Biała";
+            Czlowiek czlek = new Czlowiek("Maciej", Rasy.Biala, new DateTime(1985,09,17));
+            Czlowiek czlek2 = new Czlowiek("Natalia", Rasy.Biala, new DateTime(1985, 06, 24));
 
-            Czlowiek czlek2 = new Czlowiek();
-            czlek2.DataUrodzenia = new DateTime(1985, 06, 24);
-            czlek2.Imie = "Natalia";
-            czlek2.Rasa = "Biała";
+         
+
+        
 
             List<Czlowiek> listaLudzi = new List<Czlowiek>();
             listaLudzi.Add(czlek);

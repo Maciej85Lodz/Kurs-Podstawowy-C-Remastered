@@ -67,6 +67,7 @@
     <Compile Include="Classes\Licznik.cs" />
     <Compile Include="Classes\StatycznaKlasa.cs" />
     <Compile Include="Classes\TestowaKlasa.cs" />
+    <Compile Include="Helpers\EnumHelper.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
