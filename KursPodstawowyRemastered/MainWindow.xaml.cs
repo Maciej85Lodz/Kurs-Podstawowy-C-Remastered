@@ -2,6 +2,7 @@
 using KursPodstawowyRemastered.Helpers;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Windows;
 
@@ -73,6 +74,8 @@ namespace KursPodstawowyRemastered
         #endregion
 
         #region Classes
+        List<Czlowiek> listaLudzi = new List<Czlowiek>();
+
         void ObslugaKlas()
         {
             //TestowaKlasa testowaKlasa = new TestowaKlasa();
@@ -86,14 +89,32 @@ namespace KursPodstawowyRemastered
             Czlowiek czlek = new Czlowiek("Maciej", Rasy.Biala, new DateTime(1985,09,17));
             Czlowiek czlek2 = new Czlowiek("Natalia", Rasy.Biala, new DateTime(1985, 06, 24), "fjgvffbgerkgfryvgf","To jest Login");
 
-         
-
-        
-
-            List<Czlowiek> listaLudzi = new List<Czlowiek>();
             listaLudzi.Add(czlek);
             listaLudzi.Add(czlek2);
+            #region loops
 
+            
+            for (int i = 0; i < listaLudzi.Count; i++)
+            {
+                var a = listaLudzi.ElementAt(i);
+            }
+
+            foreach (var item in listaLudzi)
+            {
+                var a = item;
+            }
+            int licznikWhile = 0;
+            while (listaLudzi.Count > licznikWhile)
+            {
+                var a = listaLudzi[licznikWhile];
+                licznikWhile++;
+            }
+            do
+            {
+
+            } while (true);
+
+            #endregion
             listView.ItemsSource = listaLudzi;
 
         }
