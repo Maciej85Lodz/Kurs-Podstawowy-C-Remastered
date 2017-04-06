@@ -1,5 +1,5 @@
-﻿using KursPodstawowyRemastered.Classes;
-using KursPodstawowyRemastered.Helpers;
+﻿using KursPodstawowyRemastered.Helpers;
+using KursPodstawowyRemastered.Klasy;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +13,88 @@ namespace KursPodstawowyRemastered
     /// </summary>
     public partial class MainWindow : Window
     {
+        #region Zmenne o zasięgu klasy
+        Rasy rasy = new Rasy();
+        List<Czlowiek> listaLudzi = new List<Czlowiek>();
+
+        int liczbaPolubien = 10; // Testowa zmienna
+        float r = 10f; // Zmienna pomocnicza
+
+        #endregion
+
+        
+        #region Konstruktory Klasy
+        // Bazowy konstruktor klasy
+        public MainWindow()
+        {
+            InitializeComponent();
+
+            ObslugaKlas();
+            // Instrukcje();
+            //Kolekcje();
+            InstrukcjeZlozone();
+        }
+        #endregion
+
+
+        #region Klasy
+
+        void ObslugaKlas()
+        {
+            //TestowaKlasa  testowaKlasa= new TestowaKlasa();
+            //TestowaKlasa klsaziloscia = new TestowaKlasa(1);
+
+            Licznik licznik = new Licznik();
+
+            var wynik = licznik.DodajDwieLiczbyCalkowite(2, 2);
+
+            Czlowiek czlek = new Czlowiek("Kazio", Rasy.Zielona, new DateTime(1998, 11, 20));
+            Czlowiek czlek2 = new Czlowiek("Matrynka", Rasy.Fioletowa, new DateTime(1999, 01, 10), "dkjbfkjsnfdak", "ToJestLogin");
+
+            listaLudzi.Add(czlek);
+            listaLudzi.Add(czlek2);
+
+            listView.ItemsSource = listaLudzi;
+        }
+
+        #endregion
+
+        #region Enumy
+
+        // Definicja Enum
+        enum StanyPostaci
+        {
+            Biega = 10,
+            Skacze = 20,
+            Plywa = 30
+        }
+
+        void Enumy()
+        {
+            // Ustawienie "wskaźnika / wartości"
+            StanyPostaci stany = StanyPostaci.Biega;
+
+            // Zastosowanie enum w switch
+            switch (stany)
+            {
+                case StanyPostaci.Biega:
+
+                    break;
+                case StanyPostaci.Skacze:
+                    break;
+                case StanyPostaci.Plywa:
+                    break;
+                default:
+                    break;
+            }
+
+            // Utworzenie kolekcji (Array) z enum
+            var wartosciEnum = Enum.GetValues(typeof(StanyPostaci));
+
+        }
+
+
+        #endregion
 
         #region Zmienne i ich typy
 
@@ -32,7 +114,6 @@ namespace KursPodstawowyRemastered
 
         #region Bardziej "zaawansowane" typy zmiennych
 
-        //from GitHub (ImpactIT)
         char ZnakUnicode = 'Z';             // Reprezentuje jeden znak
         sbyte LiczbaCalkowita;
         Int16 LiczbaCalkowita16Bitowa;      // = short
@@ -46,161 +127,72 @@ namespace KursPodstawowyRemastered
 
         #endregion
 
-
         #region Stale
+
         const float PI = 3.14f;
-        const string naszeA = "aaaa";
-        #endregion
-
-        #region Zasieg Zmiennych
-
-        public int zmiennaPubliczna = 1;
-        internal int zmiennaInternal = 1;
-        private int zmiennaPrywatna = 1;
+        const string naszeA = "aaaaa";
 
         #endregion
 
-        int liczbaPolubien = 10; // Testowa zmienna
-        float r = 10f; // zmienna pomocnicza
-        #region Konstruktory Klasy
-        // Bazowy Konstruktor klasy
-        public MainWindow()
-        {
-            InitializeComponent();
-            //Instrukcje();
-            //Kolekcje();
-            ObslugaKlas();
-         }
+        #region Zasiegi zmiennych
+
+        public int zmiennaPubliczna = 1; // Zmienna publiczna - wszyscy mają do niej dostęp
+        internal int zmiennaInternal = 1; // Zmienna wewnętrzna - dostęp tylko z poziomu własnego programu (nie najszczęśliwsza interpretacja)
+        private int zmiennaPrywatna = 1; // Zmienna prywatna - zasięg tylko w obrębie klasy
+
+
         #endregion
 
-        #region Classes
-        List<Czlowiek> listaLudzi = new List<Czlowiek>();
 
-        void ObslugaKlas()
-        {
-            //TestowaKlasa testowaKlasa = new TestowaKlasa();
-
-            //TestowaKlasa klasaziloscia = new TestowaKlasa(1);
-
-            Licznik licznik = new Licznik();
-
-            var wynik = licznik.DodajDwieLiczbyCalkowite(2, 2);
-
-            Czlowiek czlek = new Czlowiek("Maciej", Rasy.Biala, new DateTime(1985,09,17));
-            Czlowiek czlek2 = new Czlowiek("Natalia", Rasy.Biala, new DateTime(1985, 06, 24), "fjgvffbgerkgfryvgf","To jest Login");
-
-            listaLudzi.Add(czlek);
-            listaLudzi.Add(czlek2);
-            #region loops
-
-            
-            for (int i = 0; i < listaLudzi.Count; i++)
-            {
-                var a = listaLudzi.ElementAt(i);
-            }
-
-            foreach (var item in listaLudzi)
-            {
-                var a = item;
-            }
-            int licznikWhile = 0;
-            while (listaLudzi.Count > licznikWhile)
-            {
-                var a = listaLudzi[licznikWhile];
-                licznikWhile++;
-            }
-            do
-            {
-
-            } while (true);
-
-            #endregion
-            listView.ItemsSource = listaLudzi;
-
-        }
-        #endregion
-
-        #region Enums
-        enum StanyPostaci
-        {
-            Running = 10,
-            Jumping = 20,
-            Swimming = 30
-        }
-
-        void Enumy()
-        {
-            StanyPostaci stany = StanyPostaci.Running;
-
-            switch (stany)
-            {
-                case StanyPostaci.Running:
-                    break;
-                case StanyPostaci.Jumping:
-                    break;
-                case StanyPostaci.Swimming:
-                    break;
-                default:
-                    break;
-            }
-
-            var valueEnum = Enum.GetValues(typeof(StanyPostaci));
-        }
-        #endregion
 
         #region Kolekcje
-
+        // Definicja tablicy z elementami typu int
         int[] naszaTablica = new int[10];
+        // Definicja listy z elementami typu int
         List<int> naszaList = new List<int>();
+
         void Kolekcje()
         {
+            // Dodawanie wartości do tablicy
             naszaTablica[0] = 1;
-            naszaTablica[1] = 55;
+            naszaTablica[1] = 69;
             naszaTablica[2] = 33;
-            naszaTablica[3] = 56;
-            naszaTablica[4] = 24;
-            naszaTablica[5] = 66;
-            naszaTablica[6] = 45;
-            naszaTablica[7] = 12;
-            naszaTablica[8] = 78;
-            naszaTablica[9] = 1;
 
+            // Dodawanie elementów do listy
             naszaList.Add(1);
-            naszaList.Add(55);
+            naszaList.Add(96);
             naszaList.Add(33);
-            naszaList.Add(66);
-            
 
-            //Adding source data (collections) to our ListView
+            // Dodawanie źródła danych (kolekcji) do naszego ListView
             listView.ItemsSource = naszaList;
-
         }
 
 
         #endregion
+
         #region Instrukcje
 
         private void Instrukcje()
         {
             testowyTextBlock.Text = "Start";
-            var warunek = false;
+            var warunek = true;
 
-            //Printer Status
-            var liczba = 150; // 0 = not working; 1= working; 2=maybe;
+            // stan kobiecej drukarki
+            var liczba = 150; // 0 = nie działa; 1 = działa; 2 = może;
 
             //testowyTextBlock.Text = (warunek) ? "3" : "0";
             #region Instrukcja IF
             if (liczba > 1 && liczba < 100)
             {
-                testowyTextBlock.Text = "True 1";
+                testowyTextBlock.Text = "Prawda 1";
             }
             else if (liczba > 100 && liczba < 200)
             {
-                testowyTextBlock.Text = "true 2";
+                testowyTextBlock.Text = "Prawda 2";
             }
             else
             {
-                testowyTextBlock.Text = "False";
+                testowyTextBlock.Text = "Fałsz";
             }
             #endregion
 
@@ -209,33 +201,36 @@ namespace KursPodstawowyRemastered
             switch (liczba)
             {
                 case 0:
-                    testowyTextBlock.Text = "Printer is not working";
+                    testowyTextBlock.Text = "Nie działa";
                     break;
                 case 1:
-                    testowyTextBlock.Text = "Printer is working";
+                    testowyTextBlock.Text = "Działa";
                     break;
                 case 2:
-                    testowyTextBlock.Text = "Printer is working maybe";
+                    testowyTextBlock.Text = "MOŻE!!!";
                     break;
 
                 default:
-                    testowyTextBlock.Text = "UPS!!!!";
+                    testowyTextBlock.Text = "UPS !!!";
                     break;
             }
+
             #endregion
 
             #region Instrukcja FOR
 
             for (int i = 0; i < 10; i++)
             {
-                testowyTextBlock.Text = i.ToString();   
+                testowyTextBlock.Text = i.ToString();
             }
+
             #endregion
         }
 
         #endregion
 
         #region Metody Pomocnicze
+
         public void Operatory()
         {
             #region Zmienne pomocnicze
@@ -258,7 +253,6 @@ namespace KursPodstawowyRemastered
             var wynik6 = zmiennaLiczbowa1++; // operator inkrementacji
             var wynik7 = zmiennaLiczbowa1--; // operator dekrementacji
 
-
             // Operatory relacji (najpopularniejsze)
             var wynik8 = (zmiennaLiczbowa1 == zmiennaLiczbowa2); // operator porównania
             var wynik9 = (zmiennaLiczbowa1 != zmiennaLiczbowa2); // operator negacji
@@ -280,36 +274,111 @@ namespace KursPodstawowyRemastered
             zmiennaLiczbowa1 = +3; // skraca zapis => A = 3 + A
             zmiennaLiczbowa1 = -3; // skraca zapis => A = 3 - A
             zmiennaLiczbowa1 *= 3; // skraca zapis => A = 3 * A
+
         }
 
         //Metoda
         public void PierwszaMetoda()
         {
             var wynik = PI * r * r;
+
             DrugaMetoda("aaaa");
 
             if (wynik > 30)
             {
                 int klamrowaPulapka = 1;
             }
-            //var wynik2 = PI + klamrowaPulapka; // BAD!!!
+
+            // var wynik2 = PI + klamrowaPulapka; // BAAD!!!
 
 
-            var naszPierwszyVar = liczbaPolubien; // magicznyvar -1
+            var naszPierwszyVar = liczbaPolubien; // magiczny var-1
         }
-        /// <summary>
-        /// This is the Test method which received always 'aaaa'
-        /// </summary>
-        /// <param name="a"> Super parameter 'aaaa'</param>
 
+        /// <summary>
+        /// To jest testowa metoda która przyjmuje zawsze 'aaaaa'
+        /// </summary>
+        /// <param name="a">Super Parametr 'aaaa'</param>
         public void DrugaMetoda(string a)
         {
-            var naszDrugiVar = liczbaPolubien; // magiczny var -2
+            var naszDrugiVar = liczbaPolubien; // magiczny var-2
         }
-
-
         #endregion
 
-       
+        #region Instrukcje złożone
+
+        /// <summary>
+        /// Metoda pozwalająca na test instrukcji złożonych
+        /// </summary>
+        void InstrukcjeZlozone()
+        {
+            #region Instrukcja IF
+            // Instrukcja IF
+            if (true)
+            { }
+            if else
+            { }
+            else
+            { }
+
+            // Instrukcja if skrócpna wersja
+            int a;
+            if (true) a = 1;
+            else a = 2;
+
+            #endregion
+
+            #region Instrukcja Switch
+
+            switch (rasy)
+            {
+                case Rasy.Biała:
+                    break;          // break; wychodzi z instrukcji Switch
+                case Rasy.Czarna:
+                    break;
+                case Rasy.Zielona:
+                    break;
+                case Rasy.Fioletowa:
+                    break;
+                default:            // gdy żaden warunek nie jest spełniony
+                    break;
+            }
+
+            #endregion
+
+            #region Pętle
+
+            // Instrukcja for
+            for (int i = 0; i < listaLudzi.Count; i++)
+            {
+                var a = listaLudzi.ElementAt(i);
+            }
+
+            // Instrukcja foreach
+            foreach (var item in listaLudzi)
+            {
+                var a = item;
+            }
+
+            // Instrukcja while
+            int licznikWhile = 0;
+            while (listaLudzi.Count > licznikWhile)
+            {
+                var a = listaLudzi[licznikWhile];
+                licznikWhile++;
+            }
+
+            // Instrukcja do-while
+            do
+            {
+
+            } while (false);
+
+            #endregion
+
+
+        }
+        #endregion
+
     }
 }

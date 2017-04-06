@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KursPodstawowyRemastered.Classes
+namespace KursPodstawowyRemastered.Klasy
 {
     /// <summary>
     /// Klasa do wykonywania obliczeń programu
@@ -14,44 +14,45 @@ namespace KursPodstawowyRemastered.Classes
 
 
         /// <summary>
-        /// /Dodaje dwie liczby całkowite
+        /// Dodaje dwie liczby calkowite
         /// </summary>
         /// <param name="pierwsza">Pierwsza liczba</param>
         /// <param name="druga">Druga liczba</param>
         /// <returns></returns>
         public int DodajDwieLiczbyCalkowite(int pierwsza, int druga)
         {
-            //Zabezpieczenie: kiedy ktos przekazal pusta wartosc
+            // Zabezpieczenie: kiedy ktos przekazal pusta wartość
             if (pierwsza == null || druga == null)
                 return 0;
 
             return pierwsza + druga;
         }
+
         /// <summary>
-        /// Oblicza dowolna roznica czasu pomiedzy dzis a zadana data
+        /// Oblicza dowolną rónice czasu pomiędzy dziś a zadaną data
         /// </summary>
         /// <param name="dataUrodzenia">Data</param>
         /// <returns></returns>
-        public static int ObliczRoznicaDat(DateTime dataUrodzenia)
+        public static int ObliczRozniceDat(DateTime dataUrodzenia)
         {
             return DateTime.Now.Year - dataUrodzenia.Year;
         }
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="dataOd"></param>
         /// <param name="dataUrodzenia"></param>
         /// <returns></returns>
-        public static int ObliczRoznicaDat(DateTime dataOd, DateTime dataUrodzenia)
+        public static int ObliczRozniceDat(DateTime dataOd, DateTime dataUrodzenia)
         {
             return dataOd.Year - dataUrodzenia.Year;
         }
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="rok"></param>
         /// <returns></returns>
-        public static int ObliczRoznicaDat(int rok)
+        public static int ObliczRozniceDat(int rok)
         {
             return DateTime.Now.Year - rok;
         }

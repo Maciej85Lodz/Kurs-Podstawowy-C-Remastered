@@ -1,35 +1,35 @@
 ﻿using KursPodstawowyRemastered.Helpers;
 using System;
 
-namespace KursPodstawowyRemastered.Classes
+
+namespace KursPodstawowyRemastered.Klasy
 {
     /// <summary>
-    /// Klasa Czlowiek
+    /// Klasa Człowiek
     /// </summary>
     public class Czlowiek
     {
-
         #region Konstruktory
 
-
         /// <summary>
-        /// Konstruktor klasy Czlowiek
+        /// Konstruktor klasy Człowiek
         /// </summary>
-        /// <param name="imie">Imie czleka</param>
-        /// <param name="rasa">rasa czleka</param>
-        /// <param name="dataUrodzenia">Data urodzenia czleka</param>
+        /// <param name="imie">Imię ludzia</param>
+        /// <param name="rasa">Rasa ludzia (enum)</param>
+        /// <param name="dataUrodzenia">Data urodzenia ludzia</param>
         public Czlowiek(string imie, Rasy rasa, DateTime dataUrodzenia)
         {
             Imie = imie;
             Rasa = rasa;
             DataUrodzenia = dataUrodzenia;
-            Wiek = Licznik.ObliczRoznicaDat(DataUrodzenia);
+            Wiek = Licznik.ObliczRozniceDat(DataUrodzenia);
             Haslo = "";
-            Login = "No Login Here";
-
+            Login = "NO LOGIN HERE";
         }
+
+
         /// <summary>
-        /// Konstruktor klasy Czlowiek
+        /// Konstruktor klasy Człowiek
         /// </summary>
         /// <param name="imie"></param>
         /// <param name="rasa"></param>
@@ -40,20 +40,17 @@ namespace KursPodstawowyRemastered.Classes
             Imie = imie;
             Rasa = rasa;
             DataUrodzenia = dataUrodzenia;
-            Wiek = Licznik.ObliczRoznicaDat(DataUrodzenia);
+            Wiek = Licznik.ObliczRozniceDat(DataUrodzenia);
             Haslo = haslo;
-            Login = SprawdzLogin(login)? login : "Bad login";
+            Login = SprawdzLogin(login) ? login : "Bad login";
         }
-
-
 
         #endregion
 
-        #region Wlasciwosci
-
+        #region Własności
 
         /// <summary>
-        /// Imie
+        /// Imię
         /// </summary>
         public string Imie { get; set; }
         /// <summary>
@@ -61,7 +58,7 @@ namespace KursPodstawowyRemastered.Classes
         /// </summary>
         public Rasy Rasa { get; set; }
         /// <summary>
-        /// Data Urodzenia
+        /// Datat urodzenia (format yyyy-mm-dd)
         /// </summary>
         public DateTime DataUrodzenia { get; set; }
         /// <summary>
@@ -75,36 +72,36 @@ namespace KursPodstawowyRemastered.Classes
 
         #region Do implementacji
 
-        // Nie używane pola (dla testow)
+        // Nie używane pola (dla testów)
 
         public string Zawod;
         public string Zamieszkanie;
-        #endregion
 
+        #endregion
 
         #region Metody
         /// <summary>
-        /// Generuj haslo z GIUD
+        /// Generuj hasło z GUID
         /// </summary>
         /// <returns></returns>
         public string GenerujHaslo()
         {
-           return Guid.NewGuid().ToString();
+            return Guid.NewGuid().ToString();
         }
+
         /// <summary>
-        /// sprawdzanie dlugosci loginu
+        /// Tajemnicze sprawdzanie loginu
         /// </summary>
         /// <param name="login"></param>
         /// <returns></returns>
-        private bool SprawdzLogin(object login)
+        private bool SprawdzLogin(string login)
         {
-            bool isCorrect = false;
+            bool isCorrected = false;
 
-            if (Login.Length > 7)
-                isCorrect = true;
+            if (login.Length > 7)
+                isCorrected = true;
 
-            return isCorrect;
-            
+            return isCorrected;
         }
         #endregion
 
